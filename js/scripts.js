@@ -14,3 +14,14 @@ var titleCase = function(string) {
 
   return words.join(" ")
 };
+
+$(document).ready(function() {
+  $("form#title_case").submit(function(event) {
+    var normalString = $("input#normal_string").val();
+    
+    $(".in-title-case").text(titleCase(normalString));
+
+    $("#result").show();
+    event.preventDefault();
+  });
+});
